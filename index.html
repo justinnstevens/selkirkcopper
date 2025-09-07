@@ -8,16 +8,21 @@
   <style>
     body {
       margin: 0;
-      height: 100vh;
+      min-height: 100vh; /* allow scrolling if needed */
       display: flex;
       flex-direction: column;
-      /* remove align-items: center; → squashes children */
       align-items: stretch;
       background: radial-gradient(circle, #8a8a8a 0%, #000000 100%);
       font-family: Arial, sans-serif;
       color: #f4b719;
       text-align: center;
     }
+    .pdf-viewer {
+      flex: 1;
+      min-height: 70vh; 
+      display: flex;
+    }
+
   
     img {
       max-width: 180px; 
@@ -30,11 +35,7 @@
       font-size: 2.2em;
       margin: 0 0 20px 0;
     }
-  
-    .pdf-viewer {
-      flex: 1;              /* fill remaining vertical space */
-      display: flex;        /* ensures iframe fills */
-    }
+
   
     .pdf-viewer iframe,
     .pdf-viewer embed {
@@ -106,6 +107,7 @@
 
 </body>
 </html>
+
 
 
 

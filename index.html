@@ -1,14 +1,14 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:mso="urn:schemas-microsoft-com:office:office" xmlns:msdt="uuid:C2F41010-65B3-11d1-A29F-00AA00C14882">
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Selkirk Copper</title>
-      <link href="//cdn-images.mailchimp.com/embedcode/classic-061523.css" rel="stylesheet" type="text/css">
+  <link href="//cdn-images.mailchimp.com/embedcode/classic-061523.css" rel="stylesheet" type="text/css">
   <style>
     body {
       margin: 0;
-      min-height: 100vh; /* allow scrolling if needed */
+      min-height: 100vh;
       display: flex;
       flex-direction: column;
       align-items: stretch;
@@ -17,66 +17,60 @@
       color: #f4b719;
       text-align: center;
     }
-    .pdf-viewer {
-      flex: 1;
-      min-height: 70vh; 
-      display: flex;
-    }
 
-  
     img {
       max-width: 180px; 
       height: auto;
       margin-top: 30px;
       margin-bottom: 20px;
     }
-  
+
     h1 {
       font-size: 2.2em;
       margin: 0 0 20px 0;
     }
 
-  
+    .pdf-viewer {
+      flex: 1;              /* fill all remaining space */
+      min-height: 0;        /* allow iframe to shrink properly */
+      display: flex;
+    }
+
     .pdf-viewer iframe,
     .pdf-viewer embed {
       width: 100%;
       height: 100%;
       border: none;
     }
-  
+
+    .signup-wrapper {
+      padding: 20px;
+      background: #111;
+    }
+
     #mc_embed_signup {
       background:#fff; 
       clear:left; 
       font:14px Helvetica,Arial,sans-serif; 
       width: 600px;
-      margin: 20px auto;
+      margin: 0 auto;
+      max-width: 100%;
     }
-  
+
     button:hover {
       background-color: #dca512;
     }
   </style>
-
-
-
-
-
-<!--[if gte mso 9]><xml>
-<mso:CustomDocumentProperties>
-<mso:_dlc_DocId msdt:dt="string">DKWWFAENKQSQ-292870265-143</mso:_dlc_DocId>
-<mso:_dlc_DocIdItemGuid msdt:dt="string">05dea874-e21e-488b-bb7e-da8d68b3bd8d</mso:_dlc_DocIdItemGuid>
-<mso:_dlc_DocIdUrl msdt:dt="string">https://selkirkcoppermines.sharepoint.com/sites/InvestorRelations/_layouts/15/DocIdRedir.aspx?ID=DKWWFAENKQSQ-292870265-143, DKWWFAENKQSQ-292870265-143</mso:_dlc_DocIdUrl>
-</mso:CustomDocumentProperties>
-</xml><![endif]-->
 </head>
 <body>
+  <!-- Logo + heading -->
   <img src="Logo.png" alt="Selkirk Copper Logo">
   <h1>New Website Coming Soon!</h1>
 
-  <!-- Embedded PDF viewer -->
-<div class="pdf-viewer">
-  <iframe src="presentation.pdf"></iframe>
-</div>
+  <!-- PDF viewer fills available space -->
+  <div class="pdf-viewer">
+    <iframe src="presentation.pdf"></iframe>
+  </div>
 
   <!-- Mailchimp Email Signup Form -->
 <div id="mc_embed_shell">
@@ -107,6 +101,7 @@
 
 </body>
 </html>
+
 
 
 

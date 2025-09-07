@@ -6,9 +6,12 @@
   <title>Selkirk Copper</title>
   <link href="//cdn-images.mailchimp.com/embedcode/classic-061523.css" rel="stylesheet" type="text/css">
   <style>
-    body {
+    html, body {
+      height: 100%;
       margin: 0;
-      min-height: 100vh;
+    }
+
+    body {
       display: flex;
       flex-direction: column;
       background: radial-gradient(circle, #8a8a8a 0%, #000000 100%);
@@ -19,13 +22,14 @@
 
     header {
       padding: 20px;
+      flex: 0 0 auto;
     }
 
     header img {
       max-width: 180px; 
       height: auto;
       display: block;
-      margin: 0 auto 15px auto; /* centers the logo */
+      margin: 0 auto 15px auto;
     }
 
     header h1 {
@@ -34,8 +38,8 @@
     }
 
     .pdf-viewer {
-      flex: 1;                       /* take remaining space */
-      min-height: calc(100vh - 400px); /* ensures visible height (adjust 400px if header/signup is taller/shorter) */
+      flex: 1 1 auto;
+      min-height: 0;
       display: flex;
     }
 
@@ -45,14 +49,27 @@
       border: none;
     }
 
+    .pdf-link {
+      display: none; /* hidden by default */
+      flex: 1;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.5em;
+    }
+
+    .pdf-link a {
+      color: #f4b719;
+      text-decoration: underline;
+    }
+
     .signup-wrapper {
       padding: 20px;
       background: #111;
+      flex: 0 0 auto;
     }
 
     #mc_embed_signup {
       background:#fff; 
-      clear:left; 
       font:14px Helvetica,Arial,sans-serif; 
       width: 600px;
       margin: 0 auto;
@@ -71,9 +88,14 @@
     <h1>New Website Coming Soon!</h1>
   </header>
 
-  <!-- PDF viewer fills available space -->
-  <div class="pdf-viewer">
+  <!-- PDF viewer (desktop/tablet) -->
+  <div class="pdf-viewer" id="pdfEmbed">
     <iframe src="presentation.pdf"></iframe>
+  </div>
+
+  <!-- PDF link (mobile Safari) -->
+  <div class="pdf-link" id="pdfLink">
+    <p><a href="presentation.pdf" target="_blank">📄 View Presentation (opens in new tab)</a></p>
   </div>
 
   <!-- Mailchimp Email Signup Form -->
@@ -105,6 +127,7 @@
 
 </body>
 </html>
+
 
 
 
